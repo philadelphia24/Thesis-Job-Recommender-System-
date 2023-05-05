@@ -9,14 +9,14 @@ Each of the files can be found in the data.zip. Note the following explanation o
 * Jobseeker Data: jobseekers
 * Vacancies Data: vacancies
 * Vacancies with an additional description column for the CBF: vacancies_description
-* Matches Data: mathes
+* Matches Data: matches
 * Matches with 10% noise: matches_ln10
 * Matches with 20% noise: matches_ln20
 * Matches with 30% noise: matches_ln30
 * Matches with 40% noise: matches_ln40
 
 ## Collaborative Filtering
-We use a benchmarking approach to choose a set of algorithms to tune the hyperparameters. The Surprise Library will be used for this. We determine that KNNBasic performs the best for clean data. The noisy data values are still to be determined.
+We use a benchmarking approach to choose a set of algorithms to tune the hyperparameters. The Surprise Library will be used for this. We determine that KNNBasic performs the best for the clean as well as noisy data levels. Moreover, our expectation is confirmed that the noiser, the higher the MAE is generally.
 
 ## Content-Based Filtering
 The user profile approach, in which an average for all features by a user is averaged, is tried first. The results are not convincing in terms of job titles recommended. The content approach performs better. For this, we used the well-known TF-IDF approach and add a minimum similarity requirement as well as filtering out already matched vacancies in the recommendation. In the future, we would also like to add a feature that attaches weights to the job title to increase the relevance of recommendations.
