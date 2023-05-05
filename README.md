@@ -10,10 +10,10 @@ Each of the files can be found in the data.zip. Note the following explanation o
 * Vacancies Data: vacancies
 * Vacancies with an additional description column for the CBF: vacancies_description
 * Matches Data: mathes
-* Matches with 10% noise: matches_ 10
-* Matches with 20% noise: matches_ 20
-* Matches with 30% noise: matches_ 30
-* Matches with 40% noise: matches_ 40
+* Matches with 10% noise: matches_ln10
+* Matches with 20% noise: matches_ln20
+* Matches with 30% noise: matches_ln30
+* Matches with 40% noise: matches_ln40
 
 ## Collaborative Filtering
 We use a benchmarking approach to choose a set of algorithms to tune the hyperparameters. The Surprise Library will be used for this. We determine that KNNBasic performs the best for clean data. The noisy data values are still to be determined.
