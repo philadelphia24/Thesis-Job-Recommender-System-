@@ -1,6 +1,6 @@
 # Building a Basic Job-Recommender-System
 
-The goal of this project is to develop a basic Collaborative (CF) and Content-based Filtering System (CBF) for job vacancies using the given synthetic data, and in a second step, to determine the best performing model.
+The goal of this project is to determine the best Collaborative Filtering algorithm and best Content-based Filtering System (CBF) for macthing jobseekers with vacant positions on our own artifically created job data set. We conclude that KNNBasic (user-based) is the best predictor, closely follwed by KNNBaseline (user-based). However, in terms of noise robustness, KNNBasic turns out to perform second worst out of our ten algorithms (excluding the NormalPredictor algorithm which is a used a as a baseline comparison). NMF on the other hand turned out to be the most robust algorithm.
 
 ## Synthetic data
 A synthetic dataset is created by means of Faker. In total, we discern between eight job titles, sixteen industry options, five languages, four education level variants, and lastly, four categories for the years of experience, giving rise to thirty-seven features. The result is three different tables: (1) Jobseekers, (2) Vacancies and (3) Matches.
@@ -16,7 +16,7 @@ Each of the files can be found in the data.zip. Note the following explanation o
 * Matches with 40% noise: matches_ln40
 
 ## Collaborative Filtering
-We use a benchmarking approach to choose a set of algorithms to tune the hyperparameters. The Surprise Library will be used for this. We determine that KNNBasic performs the best for the clean as well as noisy data levels. Moreover, our expectation is confirmed that the noiser, the higher the MAE is generally.
+We set aside a training and test set. After that, we train each of our eleven algorithm with the best parameters obtained from the gridsearch on our previously set aside training data. Afterwards, we evaluate the performance in terms of MAE. 
 
 ## Content-Based Filtering
-The user profile approach, in which an average for all features by a user is averaged, is tried first. The results are not convincing in terms of job titles recommended. The content approach performs better. For this, we used the well-known TF-IDF approach and add a minimum similarity requirement as well as filtering out already matched vacancies in the recommendation. In the future, we would also like to add a feature that attaches weights to the job title to increase the relevance of recommendations.
+We employ two methods: user profiling and a top-vacancy approach. The user profile approach, in which an average for all features by a user is averaged, does not provide convincing results in terms of the job titles recommended. Our findings suggest that the content approach performs better in terms of Kendall ranking compared to the user profiling. However, these results are not statistically significant.
