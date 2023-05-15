@@ -1,4 +1,4 @@
-# Building a Basic Job-Recommender-System
+# A study on how recommender systems can improve the candidate matching process
 
 The goal of this project is to determine the best Collaborative Filtering algorithm and best Content-based Filtering System (CBF) for macthing jobseekers with vacant positions on our own artifically created job data set. We conclude that KNNBasic (user-based) is the best predictor, closely follwed by KNNBaseline (user-based). However, in terms of noise robustness, KNNBasic turns out to perform second worst out of our ten algorithms (excluding the NormalPredictor algorithm which is a used a as a baseline comparison). NMF on the other hand turned out to be the most robust algorithm.
 
